@@ -1,0 +1,269 @@
+:Step03
+:: Jun 11, 2015
+
+::: Compiling open frameworks
+
+I have come to the conclusion that having an IDE do the compiling for this project is a mistake.  It adds lots of complexity and bloat. One needs to download the ide, import a project, setup the project and make sure its compiling for the right system, potentially installing additional custom plugins for Qt on linux (for example), ide's often have custom files that aren't recognizable by other ides that setup project links and relationships.  I think using make would be a much better, more platform agnostic way of compiling this project.  Should let whoever is developing choose their editor / ide and its available on every major operating system (often its pre-installed). Plus that is what Open Frameworks uses to compile--its a natural fit. 
+
+::: ripping out code blocks project info and putting in a make file
+
+I copied my project with Qt files and what not over the top of a current git clone of eyewriter and this is what I got.  I also had installed the Qt open frameworks plugin and had it generate a Makefile for me.  
+
+```
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ cd eyewriter
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ ls
+eyeWriterTracker  README.md
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ git branch -v
+* master ebdeab5 Update README.md
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ git branch -a -v
+* master                          ebdeab5 Update README.md
+  remotes/origin/HEAD             -> origin/master
+  remotes/origin/master           ebdeab5 Update README.md
+  remotes/origin/remoteEyetracker 4c1fb73 Marge drawing code & fixing many stuffs
+  remotes/origin/trackerOnly      018009d removed unnecessary svn stuff.
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ git fetch
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ git checkout remoteEyetracker 
+Branch remoteEyetracker set up to track remote branch remoteEyetracker from origin.
+Switched to a new branch 'remoteEyetracker'
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ ls
+eyeWriterTracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ rm -rf eyeWriterTracker/
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ ls
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ cp -r ../eyewriter-remoteEyetracker/eyeWriterTracker/ .
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ ls
+eyeWriterTracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ ls
+eyeWriterTracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter$ git status
+On branch remoteEyetracker
+Your branch is up-to-date with 'origin/remoteEyetracker'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	eyeWriterTracker/Makefile
+	eyeWriterTracker/RemoteEyeTracker.config
+	eyeWriterTracker/RemoteEyeTracker.creator
+	eyeWriterTracker/RemoteEyeTracker.files
+	eyeWriterTracker/RemoteEyeTracker.includes
+	eyeWriterTracker/addons.make
+	eyeWriterTracker/config.make
+	eyeWriterTracker/eyeWriterTracker.qbs
+	eyeWriterTracker/obj/
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Doing a little forum searching ofxVectorMath was deprecated its functions have been assimilated into the base project and is no longer an AddOn. It is now ofVectorMath.
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:7:27: fatal error: ofxVectorMath.h: No such file or directory
+ #include "ofxVectorMath.h"
+                           ^
+compilation terminated.
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: *** [Release] Error 2
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker$ 
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker$ cd ../../..
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofVectorMath
+./libs/openFrameworks/math/ofVectorMath.h
+```
+
+Did a search and replace of ofxVectorMath to ofVectorMath and it seems to have gotten past that particular complilation error.  Now need to worry about ofxXmlSettings.
+
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:4:28: fatal error: ofxXmlSettings.h: No such file or directory
+ #include "ofxXmlSettings.h"
+                            ^
+compilation terminated.
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: *** [Release] Error 2
+```
+
+ofxXmlSettings appears to be still an addon.  Next step will be to try and get make to reference the addon.
+```
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep XmlSettings
+./addons/ofxXmlSettings
+./addons/ofxXmlSettings/libs
+./addons/ofxXmlSettings/libs/tinyxml.cpp
+./addons/ofxXmlSettings/libs/tinyxml.h
+./addons/ofxXmlSettings/libs/tinyxmlerror.cpp
+./addons/ofxXmlSettings/libs/tinyxmlparser.cpp
+./addons/ofxXmlSettings/src
+./addons/ofxXmlSettings/src/ofxXmlSettings.cpp
+./addons/ofxXmlSettings/src/ofxXmlSettings.h
+```
+
+Putting ofxXmlSettings in make.addons seems to have fixed this compile error.
+
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeFileLister.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:28,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/simpleFileLister.h:4:24: fatal error: ofxDirList.h: No such file or directory
+ #include "ofxDirList.h"
+                        ^
+compilation terminated.
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: *** [Release] Error 2
+
+```
+
+DirList doesn't seem to exist in either addons or OF base.
+```
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep DirList
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ ls
+addons  CHANGELOG.md        docs      export      libs        other                   README.md
+apps    CODE_OF_CONDUCT.md  examples  INSTALL.md  LICENSE.md  projectGenerator-linux  scripts
+```
+
+Its now ofFileUtils.  See http://ofxfenster.undef.ch/doc/ofxDirList_8h_source.html
+```
+00001 #pragma once
+00002 
+00003 #include "ofFileUtils.h"
+00004 
+00005 #warning ofxDirList has been deprecated. 
+00006 #warning Remove all references to ofxDirList.h and use ofDirectory instead.
+00007 typedef ofDirectory ofxDirList;
+```
+
+Doing a look around I see
+```
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep Directory
+./libs/poco/include/Poco/DirectoryWatcher.h
+./libs/poco/include/Poco/DirectoryIterator.h
+./libs/poco/include/Poco/RecursiveDirectoryIterator.h
+./libs/poco/include/Poco/DirectoryIteratorStrategy.h
+./libs/poco/include/Poco/SortedDirectoryIterator.h
+./libs/poco/include/Poco/DirectoryIterator_VMS.h
+./libs/poco/include/Poco/RecursiveDirectoryIteratorImpl.h
+./libs/poco/include/Poco/DirectoryIterator_WIN32U.h
+./libs/poco/include/Poco/DirectoryIterator_UNIX.h
+./libs/poco/include/Poco/DirectoryIterator_WIN32.h
+
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofFileUtil
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/utils/ofFileUtils.o
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/utils/ofFileUtils.d
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/utils/ofFileUtils.o
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/utils/ofFileUtils.d
+./libs/openFrameworks/utils/ofFileUtils.cpp
+./libs/openFrameworks/utils/ofFileUtils.h
+
+```
+
+ofxThread missing now ofThread
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:6:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:5:23: fatal error: ofxThread.h: No such file or directory
+ #include "ofxThread.h"
+                       ^
+
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep Thread
+./addons/ofxThreadedImageLoader
+./addons/ofxThreadedImageLoader/src
+./addons/ofxThreadedImageLoader/src/ofxThreadedImageLoader.cpp
+./addons/ofxThreadedImageLoader/src/ofxThreadedImageLoader.h
+./libs/poco/include/Poco/Thread_POSIX.h
+./libs/poco/include/Poco/Thread.h
+./libs/poco/include/Poco/Thread_VX.h
+./libs/poco/include/Poco/ThreadPool.h
+./libs/poco/include/Poco/Thread_WINCE.h
+./libs/poco/include/Poco/ThreadLocal.h
+./libs/poco/include/Poco/ThreadTarget.h
+./libs/poco/include/Poco/Thread_WIN32.h
+./libs/boost/include/boost/detail/winapi/GetThreadTimes.hpp
+./libs/boost/include/boost/detail/winapi/GetCurrentThread.hpp
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/utils/ofThread.d
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/utils/ofThread.o
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/utils/ofThread.d
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/utils/ofThread.o
+./libs/openFrameworks/utils/ofThread.cpp
+./libs/openFrameworks/utils/ofThreadChannel.h
+./libs/openFrameworks/utils/ofThread.h
+./examples/gl/threadedPixelBufferExample/src/ImageSaverThread.cpp
+./examples/gl/threadedPixelBufferExample/src/ImageSaverThread.h
+./examples/utils/threadChannelExample/src/ImgAnalysisThread.cpp
+./examples/utils/threadChannelExample/src/ImgAnalysisThread.h
+
+```
+
+now we need ofxVec2f
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/otherScenes/typingScene.h:13:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:10,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h:14:22: fatal error: ofxVec2f.h: No such file or directory
+ #include "ofxVec2f.h"
+                      ^
+compilation terminated.
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: ** [Release] Error 2
+
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofVec2f
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/math/ofVec2f.d
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/math/ofVec2f.o
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/math/ofVec2f.d
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/math/ofVec2f.o
+./libs/openFrameworks/math/ofVec2f.h
+./libs/openFrameworks/math/ofVec2f.cpp
+
+```
+
+ofxPoint2f.h
+```
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/drawingScene.h:13:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:11:24: fatal error: ofxPoint2f.h: No such file or directory
+ #include "ofxPoint2f.h"
+                        ^
+compilation terminated.
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: *** [Release] Error 2
+```
+
+Found this http://ofxfenster.undef.ch/doc/ofxPoint2f_8h.html, but did not see the alias.  I should be able to substitute ofVec2f for ofxPoint2f.
+```
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofVec2f
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/math/ofVec2f.d
+./libs/openFrameworksCompiled/lib/linux/obj/Release/libs/openFrameworks/math/ofVec2f.o
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/math/ofVec2f.d
+./libs/openFrameworksCompiled/lib/linux/obj/Debug/libs/openFrameworks/math/ofVec2f.o
+./libs/openFrameworks/math/ofVec2f.h
+./libs/openFrameworks/math/ofVec2f.cpp
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofPoint2f
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ find . | grep ofPoint
+./libs/openFrameworks/types/ofPoint.h
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release$ cat ./libs/openFrameworks/types/ofPoint.h
+#pragma once
+
+#include "ofVec3f.h"
+
+/// \file 
+/// ofPoint is a typedef (alias) of ofVec3f
+
+/// \brief Look at ofVec3f for documentation
+typedef ofVec3f ofPoint;
+```
+
+make compile worked for a long time and finally errored out.  I think I have "fixed" all the problems with deprecation. Gobs of warnings and maybe a couple errors.  Will rerun in an emacs buffer so I can analyze.
+

@@ -1,0 +1,30 @@
+:Step 09
+:: Jun 9, 2015
+
+Tested the vsync setup today. The two key bits not in the instructable are that the camera needs to be plugged in and capturing video in order for the vsync test to work (where the LED flashes). I found that a very small drill bit (1/16 was the smallest I had a bit big but it did the job, 1/32 might be perfect) works much better than a knife to remove the small amount of the pcb's coating covering the via.
+
+Its probably better to do step 10 before tapping into the vsync. In step 10 it tells you to be careful of the fragile vsync solder you did.  Better to not have that done as you are taking the lens off and putting the new one on.  It really doesn't need to be done first.
+
+:: June 10, 2015
+
+This is for step04, getting the arduino to work on Linux to test the camera here involved setting permissions for the USB port so that I could compile and upload StrobeEye.pde.  Those instructions are here http://playground.arduino.cc/Linux/All#Permission.
+
+```
+Serial port permissions
+
+    now as normal user from terminal:
+    ls -l /dev/ttyUSB* 
+
+or
+ls -l /dev/ttyACM*
+you will get something like:
+crw-rw---- 1 root uucp 188, 0 5 apr 23.01 ttyUSB0
+or
+crw-rw---- 1 root dialout 188, 0 5 apr 23.01 ttyACM0
+The "0" might be a different number, or multiple entries might be returned. In the first case the data we need is "uucp", in the second "dialout" (is the group owner of the file.
+
+    Now we just need to add our user to the group:
+    usermod -a -G group-name username 
+
+where group-name is the data found before, and username is your linux user name. You will need to log out and in again for this change to take effect. 
+```

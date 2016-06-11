@@ -1,0 +1,448 @@
+el/guiTypeChartPlotter.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeCustom.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeCustom.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeDrawable.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeDrawable.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeFileLister.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeFileLister.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeLogger.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeLogger.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeMultiToggle.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeMultiToggle.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypePanel.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypePanel.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeSlider.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeSlider.h  
+ extracting: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeText.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeText.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeTextDropDown.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeTextDropDown.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeToggle.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeToggle.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVideo.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVideo.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiValue.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiValue.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/guiVariablePointer.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleColor.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleColor.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleFileLister.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleFileLister.h  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleLogger.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxControlPanel/simpleLogger.h  
+   creating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.h  
+   creating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxLeastSquares/
+   creating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxLeastSquares/src/
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxLeastSquares/src/ofxLeastSquares.cpp  
+  inflating: eyewriter-remoteEyetracker/eyeWriterTracker/src/utils/ofxLeastSquares/src/ofxLeastSquares.h  
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ ls
+eyewriter-remoteEyetracker      myApps
+eyewriter-remoteEyetracker.zip  projectGenerator
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ cd eyewriter-remoteEyetracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker$ ls
+eyeWriterTracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker$ cd eyeWriterTracker/
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ ls
+bin                        RemoteEyeTracker.cbp        src
+openFrameworks-Info.plist  RemoteEyeTracker.workspace  StrobeEye
+ReadMe.txt                 RemoteEyeTracker.xcodeproj  StrobeEyePtGrey
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ tree
+The program 'tree' is currently not installed. You can install it by typing:
+sudo apt-get install tree
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ sudo apt-get install tree
+[sudo] password for grace1: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  account-plugin-windows-live libboost-iostreams1.54.0
+  libboost-program-options1.54.0 libboost-regex1.54.0 libcdaudio1
+  libgstreamer-plugins-bad0.10-0 libmikmod2 libmpdec2 libntdb1 libsdl-mixer1.2
+  libsdl-net1.2 libsdl-ttf2.0-0 libslv2-9 libupstart1 linux-headers-3.13.0-36
+  linux-headers-3.13.0-36-generic linux-headers-3.13.0-57
+  linux-headers-3.13.0-57-generic linux-image-3.13.0-36-generic
+  linux-image-3.13.0-57-generic linux-image-extra-3.13.0-36-generic
+  linux-image-extra-3.13.0-57-generic musescore-soundfont-gm python-ntdb
+  python-pycurl wesnoth-1.10-aoi wesnoth-1.10-core wesnoth-1.10-data
+  wesnoth-1.10-did wesnoth-1.10-dm wesnoth-1.10-dw wesnoth-1.10-ei
+  wesnoth-1.10-httt wesnoth-1.10-l wesnoth-1.10-low wesnoth-1.10-music
+  wesnoth-1.10-nr wesnoth-1.10-sof wesnoth-1.10-sotbe wesnoth-1.10-thot
+  wesnoth-1.10-trow wesnoth-1.10-tsg wesnoth-1.10-ttb wesnoth-1.10-utbs
+Use 'apt-get autoremove' to remove them.
+The following NEW packages will be installed:
+  tree
+0 upgraded, 1 newly installed, 0 to remove and 89 not upgraded.
+Need to get 36.7 kB of archives.
+After this operation, 112 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/universe tree i386 1.6.0-1 [36.7 kB]
+Fetched 36.7 kB in 0s (72.8 kB/s)
+Selecting previously unselected package tree.
+(Reading database ... 370653 files and directories currently installed.)
+Preparing to unpack .../archives/tree_1.6.0-1_i386.deb ...
+Unpacking tree (1.6.0-1) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up tree (1.6.0-1) ...
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ tree
+.
+├── bin
+│   └── data
+│       ├── colors.xml
+│       ├── controlPanelSettings.xml
+│       ├── fonts
+│       │   ├── HelveticaNeueMed.ttf
+│       │   └── verdana.ttf
+│       ├── images
+│       │   └── calibrationInfo.png
+│       ├── movies
+│       │   └── Tony3ew2-cut1.mov
+│       ├── Settings
+│       │   ├── calibrationSettings.xml
+│       │   ├── calibration.xml
+│       │   ├── inputSettings.xml
+│       │   └── trackingSettings.xml
+│       ├── settings.xml
+│       └── tags
+│           └── gml
+│               ├── temptTag-2010_8_26_18_49_3.gml
+│               ├── temptTag-2010_8_26_18_58_25.gml
+│               └── temptTag-2010_8_27_11_39_46.gml
+├── openFrameworks-Info.plist
+├── ReadMe.txt
+├── RemoteEyeTracker.cbp
+├── RemoteEyeTracker.workspace
+├── RemoteEyeTracker.xcodeproj
+│   └── project.pbxproj
+├── src
+│   ├── addons
+│   │   ├── ofxFileHelper
+│   │   │   └── ofxFileHelper.h
+│   │   ├── ofxLibdc
+│   │   │   ├── libs
+│   │   │   │   └── osx
+│   │   │   │       ├── include
+│   │   │   │       │   └── dc1394
+│   │   │   │       │       ├── dc1394_camera.h
+│   │   │   │       │       ├── dc1394_capture.h
+│   │   │   │       │       ├── dc1394_control.h
+│   │   │   │       │       ├── dc1394_conversions.h
+│   │   │   │       │       ├── dc1394_format7.h
+│   │   │   │       │       ├── dc1394.h
+│   │   │   │       │       ├── dc1394_iso.h
+│   │   │   │       │       ├── dc1394_log.h
+│   │   │   │       │       ├── dc1394_register.h
+│   │   │   │       │       ├── dc1394_types.h
+│   │   │   │       │       ├── dc1394_utils.h
+│   │   │   │       │       ├── dc1394_video.h
+│   │   │   │       │       ├── macosx
+│   │   │   │       │       │   └── capture.h
+│   │   │   │       │       └── vendor
+│   │   │   │       │           ├── avt.h
+│   │   │   │       │           ├── basler.h
+│   │   │   │       │           ├── basler_sff.h
+│   │   │   │       │           └── pixelink.h
+│   │   │   │       └── lib
+│   │   │   │           └── libdc1394.a
+│   │   │   ├── README.txt
+│   │   │   └── src
+│   │   │       ├── ofxLibdc.cpp
+│   │   │       ├── ofxLibdcGrabber.cpp
+│   │   │       ├── ofxLibdcGrabber.h
+│   │   │       ├── ofxLibdc.h
+│   │   │       ├── ofxLibdcPtGrey.cpp
+│   │   │       └── ofxLibdcPtGrey.h
+│   │   └── ofxOpenCv
+│   │       ├── install.xml
+│   │       ├── libs
+│   │       │   └── opencv
+│   │       │       ├── include
+│   │       │       │   ├── cvaux.h
+│   │       │       │   ├── cvaux.hpp
+│   │       │       │   ├── cvcompat.h
+│   │       │       │   ├── cv.h
+│   │       │       │   ├── cv.hpp
+│   │       │       │   ├── cvmat.hpp
+│   │       │       │   ├── cvstreams.h
+│   │       │       │   ├── cvtypes.h
+│   │       │       │   ├── cvver.h
+│   │       │       │   ├── cvvidsurv.hpp
+│   │       │       │   ├── cvwimage.h
+│   │       │       │   ├── cxcore.h
+│   │       │       │   ├── cxcore.hpp
+│   │       │       │   ├── cxerror.h
+│   │       │       │   ├── cxmisc.h
+│   │       │       │   └── cxtypes.h
+│   │       │       └── lib
+│   │       │           ├── osx
+│   │       │           │   └── openCV.a
+│   │       │           └── win_cb
+│   │       │               ├── libcv.a
+│   │       │               ├── libcvaux.a
+│   │       │               └── libcxcore.a
+│   │       └── src
+│   │           ├── ofxCvBlob.h
+│   │           ├── ofxCvColorImage.cpp
+│   │           ├── ofxCvColorImage.h
+│   │           ├── ofxCvConstants.h
+│   │           ├── ofxCvContourFinder.cpp
+│   │           ├── ofxCvContourFinder.h
+│   │           ├── ofxCvFloatImage.cpp
+│   │           ├── ofxCvFloatImage.h
+│   │           ├── ofxCvGrayscaleImage.cpp
+│   │           ├── ofxCvGrayscaleImage.h
+│   │           ├── ofxCvImage.cpp
+│   │           ├── ofxCvImage.h
+│   │           ├── ofxCvMain.h
+│   │           ├── ofxCvShortImage.cpp
+│   │           ├── ofxCvShortImage.h
+│   │           └── ofxOpenCv.h
+│   ├── calibration
+│   │   ├── calibrationFileSaver.cpp
+│   │   ├── calibrationFileSaver.h
+│   │   ├── calibrationManager_controlPanel.cpp
+│   │   ├── calibrationManager.cpp
+│   │   ├── calibrationManager.h
+│   │   ├── pointFitter.cpp
+│   │   └── pointFitter.h
+│   ├── eyePlotterTestApp
+│   │   ├── appUtils.h
+│   │   ├── defines.h
+│   │   ├── eyePlotterTestApp.cpp
+│   │   ├── eyePlotterTestApp.h
+│   │   ├── fileHelper.h
+│   │   ├── gml
+│   │   │   ├── gmlReader.cpp
+│   │   │   ├── gmlReader.h
+│   │   │   ├── gmlUploader.cpp
+│   │   │   ├── gmlUploader.h
+│   │   │   ├── grafIO.cpp
+│   │   │   ├── grafIO.h
+│   │   │   └── httposting
+│   │   │       ├── pocoHttpPostForm.cpp
+│   │   │       └── pocoHttpPostForm.h
+│   │   ├── gui
+│   │   │   ├── buttonRect.cpp
+│   │   │   ├── buttonRect.h
+│   │   │   ├── buttonState.h
+│   │   │   ├── buttonStateManager.cpp
+│   │   │   ├── buttonStateManager.h
+│   │   │   ├── buttonToggle.cpp
+│   │   │   ├── buttonToggle.h
+│   │   │   ├── buttonTrigger.cpp
+│   │   │   ├── buttonTrigger.h
+│   │   │   ├── timerButton.cpp
+│   │   │   └── timerButton.h
+│   │   ├── scenes
+│   │   │   ├── baseScene.cpp
+│   │   │   ├── baseScene.h
+│   │   │   ├── drawingScene.cpp
+│   │   │   ├── drawingScene.h
+│   │   │   ├── manipulationScene.cpp
+│   │   │   ├── manipulationScene.h
+│   │   │   ├── saverScene.cpp
+│   │   │   ├── saverScene.h
+│   │   │   ├── styleScene.cpp
+│   │   │   └── styleScene.h
+│   │   ├── simpleFtpUpload.h
+│   │   ├── strokes
+│   │   │   ├── groupCollection.cpp
+│   │   │   ├── groupCollection.h
+│   │   │   ├── stroke.cpp
+│   │   │   ├── strokeGroup.cpp
+│   │   │   ├── strokeGroup.h
+│   │   │   ├── stroke.h
+│   │   │   ├── strokePoint.cpp
+│   │   │   ├── strokePoint.h
+│   │   │   ├── strokeThumbnails.cpp
+│   │   │   ├── strokeThumbnails.h
+│   │   │   ├── strokeUtils.cpp
+│   │   │   └── strokeUtils.h
+│   │   └── styling
+│   │       ├── colorPicker.cpp
+│   │       ├── colorPicker.h
+│   │       ├── groupStyle.cpp
+│   │       ├── groupStyle.h
+│   │       ├── renderManager.cpp
+│   │       └── renderManager.h
+│   ├── main.cpp
+│   ├── otherScenes
+│   │   ├── pongScene.cpp
+│   │   ├── pongScene.h
+│   │   ├── speak.h
+│   │   ├── speak.m
+│   │   ├── typingScene.cpp
+│   │   └── typingScene.h
+│   ├── testApp.cpp
+│   ├── testApp.h
+│   ├── Tracking
+│   │   ├── brightDarkFinder.cpp
+│   │   ├── brightDarkFinder.h
+│   │   ├── eyeFinder.cpp
+│   │   ├── eyeFinder.h
+│   │   ├── eyeTracker.cpp
+│   │   ├── eyeTracker.h
+│   │   ├── GlintFinder
+│   │   │   ├── glintFinder.cpp
+│   │   │   ├── glintFinder.h
+│   │   │   ├── glintLineChecker.cpp
+│   │   │   ├── glintLineChecker.h
+│   │   │   ├── glintRefChecker.cpp
+│   │   │   └── glintRefChecker.h
+│   │   ├── homographyCalcurator.cpp
+│   │   ├── homographyCalcurator.h
+│   │   ├── InputManager
+│   │   │   ├── inputManager.cpp
+│   │   │   ├── inputManager.h
+│   │   │   ├── threadedGrabber
+│   │   │   │   ├── baseVideoGrabber.h
+│   │   │   │   ├── fireflyVideoGrabber.h
+│   │   │   │   ├── qtVideoGrabber.h
+│   │   │   │   ├── threadedPtGreyGrabber.h
+│   │   │   │   └── threadedQtVideoGrabber.h
+│   │   │   └── threadedImgSaver.h
+│   │   ├── PupilFinder
+│   │   │   ├── blobResampler.cpp
+│   │   │   ├── blobResampler.h
+│   │   │   ├── EllipseFit
+│   │   │   │   ├── EllipseCalcurator.cpp
+│   │   │   │   ├── EllipseCalcurator.h
+│   │   │   │   ├── FitEllipse.cpp
+│   │   │   │   └── FitEllipse.h
+│   │   │   ├── pupilFinder.cpp
+│   │   │   └── pupilFinder.h
+│   │   ├── thresholdCalculator.cpp
+│   │   ├── thresholdCalculator.h
+│   │   ├── trackingManager.cpp
+│   │   ├── trackingManager.h
+│   │   └── trakingManager_controlPanel.cpp
+│   └── utils
+│       ├── buttons
+│       │   ├── buttonRect.cpp
+│       │   ├── buttonRect.h
+│       │   ├── buttonTrigger.cpp
+│       │   └── buttonTrigger.h
+│       ├── ofxControlPanel
+│       │   ├── guiBaseObject.cpp
+│       │   ├── guiBaseObject.h
+│       │   ├── guiCallback.cpp
+│       │   ├── guiCallback.h
+│       │   ├── guiCallbackValue.cpp
+│       │   ├── guiCallbackValue.h
+│       │   ├── guiColor.cpp
+│       │   ├── guiColor.h
+│       │   ├── guiCustomImpl.h
+│       │   ├── guiIncludes.h
+│       │   ├── guiTextBase.cpp
+│       │   ├── guiTextBase.h
+│       │   ├── guiType2DSlider.cpp
+│       │   ├── guiType2DSlider.h
+│       │   ├── guiTypeButtonSlider.cpp
+│       │   ├── guiTypeButtonSlider.h
+│       │   ├── guiTypeChartPlotter.cpp
+│       │   ├── guiTypeChartPlotter.h
+│       │   ├── guiTypeCustom.cpp
+│       │   ├── guiTypeCustom.h
+│       │   ├── guiTypeDrawable.cpp
+│       │   ├── guiTypeDrawable.h
+│       │   ├── guiTypeFileLister.cpp
+│       │   ├── guiTypeFileLister.h
+│       │   ├── guiTypeLogger.cpp
+│       │   ├── guiTypeLogger.h
+│       │   ├── guiTypeMultiToggle.cpp
+│       │   ├── guiTypeMultiToggle.h
+│       │   ├── guiTypePanel.cpp
+│       │   ├── guiTypePanel.h
+│       │   ├── guiTypeSlider.cpp
+│       │   ├── guiTypeSlider.h
+│       │   ├── guiTypeText.cpp
+│       │   ├── guiTypeTextDropDown.cpp
+│       │   ├── guiTypeTextDropDown.h
+│       │   ├── guiTypeText.h
+│       │   ├── guiTypeToggle.cpp
+│       │   ├── guiTypeToggle.h
+│       │   ├── guiTypeVairableLister.cpp
+│       │   ├── guiTypeVairableLister.h
+│       │   ├── guiTypeVideo.cpp
+│       │   ├── guiTypeVideo.h
+│       │   ├── guiValue.cpp
+│       │   ├── guiValue.h
+│       │   ├── guiVariablePointer.h
+│       │   ├── ofxControlPanel.cpp
+│       │   ├── ofxControlPanel.h
+│       │   ├── simpleColor.cpp
+│       │   ├── simpleColor.h
+│       │   ├── simpleFileLister.cpp
+│       │   ├── simpleFileLister.h
+│       │   ├── simpleLogger.cpp
+│       │   └── simpleLogger.h
+│       ├── ofxCvGrayscaleAdvanced
+│       │   ├── ofxCvGrayscaleAdvanced.cpp
+│       │   └── ofxCvGrayscaleAdvanced.h
+│       └── ofxLeastSquares
+│           └── src
+│               ├── ofxLeastSquares.cpp
+│               └── ofxLeastSquares.h
+├── StrobeEye
+│   └── StrobeEye.pde
+└── StrobeEyePtGrey
+    └── StrobeEyePtGrey.pde
+
+52 directories, 249 files
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ ls
+bin                        RemoteEyeTracker.cbp        src
+openFrameworks-Info.plist  RemoteEyeTracker.workspace  StrobeEye
+ReadMe.txt                 RemoteEyeTracker.xcodeproj  StrobeEyePtGrey
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ cd ..
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker$ ls
+eyeWriterTracker
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker$ cd ..
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ ls
+eyewriter-remoteEyetracker      myApps
+eyewriter-remoteEyetracker.zip  projectGenerator
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ rm eyewriter-remoteEyetracker.zip 
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ ls
+eyewriter-remoteEyetracker  myApps  projectGenerator
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps$ cd eyewriter-remoteEyetracker/eyeWriterTracker/
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ open 
+bin/                        RemoteEyeTracker.xcodeproj/
+openFrameworks-Info.plist   src/
+ReadMe.txt                  StrobeEye/
+RemoteEyeTracker.cbp        StrobeEyePtGrey/
+RemoteEyeTracker.workspace  
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ open 
+bin/                        RemoteEyeTracker.xcodeproj/
+openFrameworks-Info.plist   src/
+ReadMe.txt                  StrobeEye/
+RemoteEyeTracker.cbp        StrobeEyePtGrey/
+RemoteEyeTracker.workspace  
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ open RemoteEyeTracker.xcodeproj/
+Couldn't get a file descriptor referring to the console
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker$ cd ~/Downloads/
+grace1@grace1-ThinkPad-R52:~/Downloads$ ls
+20140311.mp3
+3b4a6016-ffb4-9da1-dca3-6667d68fcbb7.pdf
+8d762e5d-8bd0-836f-a1ff-ac27d7ef47d5.pdf
+AcresofDiamonds.pdf
+Assembly Guide - Mini Kossel.doc
+d031e17b-b1d6-48f1-8c35-06b8615ba1f8.pdf
+FitbitConnect_Mac_20140519_1.0.3.5510.dmg
+FitbitConnect_Mac_20140519_1.0.3.5510.img
+Full ShaBang Profile Download(1).pdf
+Full ShaBang Profile Download(2).pdf
+Full ShaBang Profile Download.pdf
+GNU_Health_2.4.1__KDE_4__32bit.i686-0.0.71.oem.tar.gz
+pg2554.mobi
+qt-unified-linux-x86-2.0.3-online.run
+Ryan-Smith-Fascination-Advantage-Report.pdf
+ubuntu-15.10-desktop-i386.iso
+grace1@grace1-ThinkPad-R52:~/Downloads$ chmod +x qt-unified-linux-x86-2.0.3-online.run 
+grace1@grace1-ThinkPad-R52:~/Downloads$ ./qt-unified-linux-x86-2.0.3-online.run qt.network.ssl: QSslSocket: cannot resolve SSLv2_client_method
+qt.network.ssl: QSslSocket: cannot resolve SSLv2_server_method
+grace1@grace1-ThinkPad-R52:~/Downloads$ Cannot start '/usr/lib/i386-linux-gnu/qt4/bin/qmake': No such file or directory
+

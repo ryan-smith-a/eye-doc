@@ -1,0 +1,620 @@
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker$ make
+HOST_OS=Linux
+checking pkg-config libraries:   cairo zlib gstreamer-app-1.0 gstreamer-1.0 gstreamer-video-1.0 gstreamer-base-1.0 libudev freetype2 fontconfig sndfile openal openssl libpulse-simple alsa gl glu glew gtk+-3.0 
+Compiling OF library for Release
+HOST_OS=Linux
+checking pkg-config libraries:   cairo zlib gstreamer-app-1.0 gstreamer-1.0 gstreamer-video-1.0 gstreamer-base-1.0 libudev freetype2 fontconfig sndfile openal openssl libpulse-simple alsa gl glu glew gtk+-3.0 
+make[1]: Entering directory `/home/grace1/of_v0.9.3_linux_release/libs/openFrameworksCompiled/project'
+HOST_OS=Linux
+checking pkg-config libraries:   cairo zlib gstreamer-app-1.0 gstreamer-1.0 gstreamer-video-1.0 gstreamer-base-1.0 libudev freetype2 fontconfig sndfile openal openssl libpulse-simple alsa gl glu glew gtk+-3.0 
+HOST_OS=Linux
+checking pkg-config libraries:   cairo zlib gstreamer-app-1.0 gstreamer-1.0 gstreamer-video-1.0 gstreamer-base-1.0 libudev freetype2 fontconfig sndfile openal openssl libpulse-simple alsa gl glu glew gtk+-3.0 
+Done!
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/libs/openFrameworksCompiled/project'
+
+
+Compiling eyeWriterTracker for Release
+HOST_OS=Linux
+checking pkg-config libraries:   cairo zlib gstreamer-app-1.0 gstreamer-1.0 gstreamer-video-1.0 gstreamer-base-1.0 libudev freetype2 fontconfig sndfile openal openssl libpulse-simple alsa gl glu glew gtk+-3.0 
+make[1]: Entering directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+Compiling /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp
+g++ -c -O3 -DNDEBUG -march=native -mtune=native -Wall -std=c++14 -DGCC_HAS_REGEX -DOF_USING_GTK -DOF_USING_GTK  -pthread -D_REENTRANT -I/usr/include/cairo -I/usr/include/glib-2.0 -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/gstreamer-1.0 -I/usr/include/alsa -I/usr/include/libdrm -I/usr/include/GL -I/usr/include/gtk-3.0 -I/usr/include/atk-1.0 -I/usr/include/at-spi2-atk/2.0 -I/usr/include/pango-1.0 -I/usr/include/gio-unix-2.0/ -I/usr/include/gdk-pixbuf-2.0 -I/usr/include/harfbuzz -I/home/grace1/of_v0.9.3_linux_release/libs/fmodex/include -I/home/grace1/of_v0.9.3_linux_release/libs/glfw/include -I/home/grace1/of_v0.9.3_linux_release/libs/glfw/include/GLFW -I/home/grace1/of_v0.9.3_linux_release/libs/kiss/include -I/home/grace1/of_v0.9.3_linux_release/libs/poco/include -I/home/grace1/of_v0.9.3_linux_release/libs/tess2/include -I/home/grace1/of_v0.9.3_linux_release/libs/utf8cpp/include -I/home/grace1/of_v0.9.3_linux_release/libs/utf8cpp/include/utf8 -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/app -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/communication -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/3d -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/video -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/events -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/gl -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/sound -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/math -I/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/utils -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/StrobeEye -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/StrobeEyePtGrey -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/EllipseFit -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxFileHelper -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx/include -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx/include/dc1394 -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx/include/dc1394/vendor -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx/include/dc1394/macosx -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/libs/osx/lib -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxLibdc/src -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs/opencv -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs/opencv/include -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs/opencv/lib -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs/opencv/lib/win_cb -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/libs/opencv/lib/osx -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gml -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gml/httposting -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/styling -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/otherScenes -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/calibration -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxLeastSquares -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxLeastSquares/src -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel -I/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/buttons -I/home/grace1/of_v0.9.3_linux_release/addons/ofxXmlSettings/src -I/home/grace1/of_v0.9.3_linux_release/addons/ofxXmlSettings/libs -MMD -MP -MF obj/linux/Release/src/main.d -MT obj/linux/Release/src/main.o -o obj/linux/Release/src/main.o -c /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvGrayscaleImage.h:14:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.h:14,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvImage.h:80:29: error: conflicting return type specified for ‘virtual unsigned char* ofxCvImage::getPixels()’
+     virtual unsigned char*  getPixels() = 0;
+                             ^
+In file included from /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/ofMain.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:1:
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:223:25: error:   overriding ‘ofPixels_<PixelType>& ofBaseHasPixels_<T>::getPixels() [with T = unsigned char]’
+  virtual ofPixels_<T> & getPixels()=0;
+                         ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvGrayscaleImage.h:15:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.h:14,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvBlob.h: In member function ‘void ofxCvBlob::draw(float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvBlob.h:51:99: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+ + boundingRect.x, y + boundingRect.y, boundingRect.width, boundingRect.height);
+                                                                              ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxOpenCv.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvContourFinder.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvContourFinder.h:56:29: error: cannot declare field ‘ofxCvContourFinder::inputCopy’ to be of abstract type ‘ofxCvGrayscaleImage’
+     ofxCvGrayscaleImage     inputCopy;
+                             ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.h:14:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvGrayscaleImage.h:19:7: note:   because the following virtual functions are pure within ‘ofxCvGrayscaleImage’:
+ class ofxCvGrayscaleImage : public ofxCvImage {
+       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/ofMain.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:1:
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:156:22: note: 	virtual ofTexture& ofBaseHasTexture::getTexture()
+  virtual ofTexture & getTexture()=0;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:159:28: note: 	virtual const ofTexture& ofBaseHasTexture::getTexture() const
+  virtual const ofTexture & getTexture() const=0;
+                            ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:166:15: note: 	virtual bool ofBaseHasTexture::isUsingTexture() const
+  virtual bool isUsingTexture() const=0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:227:31: note: 	const ofPixels_<PixelType>& ofBaseHasPixels_<T>::getPixels() const [with T = unsigned char]
+  virtual const ofPixels_<T> & getPixels() const=0;
+                               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:77:15: note: 	virtual void ofBaseDraws::draw(float, float, float, float) const
+  virtual void draw(float x, float y, float w, float h) const = 0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:106:16: note: 	virtual float ofBaseDraws::getHeight() const
+  virtual float getHeight() const = 0;
+                ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:110:16: note: 	virtual float ofBaseDraws::getWidth() const
+  virtual float getWidth() const = 0;
+                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeFinder.h:18:23: error: cannot declare field ‘eyeFinder::contourFinder’ to be of abstract type ‘ofxCvContourFinder’
+  ofxCvContourFinder   contourFinder;
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxOpenCv.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvContourFinder.h:20:7: note:   because the following virtual functions are pure within ‘ofxCvContourFinder’:
+ class ofxCvContourFinder : public ofBaseDraws {
+       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/ofMain.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:1:
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:77:15: note: 	virtual void ofBaseDraws::draw(float, float, float, float) const
+  virtual void draw(float x, float y, float w, float h) const = 0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:106:16: note: 	virtual float ofBaseDraws::getHeight() const
+  virtual float getHeight() const = 0;
+                ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:110:16: note: 	virtual float ofBaseDraws::getWidth() const
+  virtual float getWidth() const = 0;
+                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeFinder.h:19:26: error: cannot declare field ‘eyeFinder::currentImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced  currentImg;
+                          ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:5:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxCvGrayscaleAdvanced/ofxCvGrayscaleAdvanced.h:30:7: note:   because the following virtual functions are pure within ‘ofxCvGrayscaleAdvanced’:
+ class ofxCvGrayscaleAdvanced : public ofxCvGrayscaleImage {
+       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/ofMain.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:1:
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:156:22: note: 	virtual ofTexture& ofBaseHasTexture::getTexture()
+  virtual ofTexture & getTexture()=0;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:159:28: note: 	virtual const ofTexture& ofBaseHasTexture::getTexture() const
+  virtual const ofTexture & getTexture() const=0;
+                            ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:166:15: note: 	virtual bool ofBaseHasTexture::isUsingTexture() const
+  virtual bool isUsingTexture() const=0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:227:31: note: 	const ofPixels_<PixelType>& ofBaseHasPixels_<T>::getPixels() const [with T = unsigned char]
+  virtual const ofPixels_<T> & getPixels() const=0;
+                               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:77:15: note: 	virtual void ofBaseDraws::draw(float, float, float, float) const
+  virtual void draw(float x, float y, float w, float h) const = 0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:106:16: note: 	virtual float ofBaseDraws::getHeight() const
+  virtual float getHeight() const = 0;
+                ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:110:16: note: 	virtual float ofBaseDraws::getWidth() const
+  virtual float getWidth() const = 0;
+                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeFinder.h:20:26: error: cannot declare field ‘eyeFinder::previousImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced  previousImg;
+                          ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeFinder.h:21:26: error: cannot declare field ‘eyeFinder::diffImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced  diffImg;
+                          ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/pupilFinder.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:9,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/EllipseFit/EllipseCalcurator.h: In member function ‘void eyeEllipse::draw(float, float, float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/EllipseFit/EllipseCalcurator.h:78:20: warning: ‘void ofLine(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:486): Use ofDrawLine instead [-Wdeprecated-declarations]
+    ofLine(0,0,ex,ey);
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/EllipseFit/EllipseCalcurator.h:41:9: warning: unused variable ‘aspect’ [-Wunused-variable]
+   float aspect = axis_b/axis_a;
+         ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:9:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/pupilFinder.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/pupilFinder.h:20:25: error: cannot declare field ‘pupilFinder::currentImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced currentImg;
+                         ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/pupilFinder.h:21:23: error: cannot declare field ‘pupilFinder::imgBeforeThreshold’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  imgBeforeThreshold;   // only for displaying in tracking 
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/PupilFinder/pupilFinder.h:22:22: error: cannot declare field ‘pupilFinder::contourFinder’ to be of abstract type ‘ofxCvContourFinder’
+  ofxCvContourFinder  contourFinder;
+                      ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintFinder.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:10,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintLineChecker.h:34:23: error: cannot declare field ‘glintLineChecker::myStripesImage’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  myStripesImage;
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintLineChecker.h:35:22: error: cannot declare field ‘glintLineChecker::linesFinder’ to be of abstract type ‘ofxCvContourFinder’
+  ofxCvContourFinder  linesFinder;
+                      ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:10:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintFinder.h:24:22: error: cannot declare field ‘glintFinder::contourFinder’ to be of abstract type ‘ofxCvContourFinder’
+  ofxCvContourFinder  contourFinder;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintFinder.h:25:22: error: cannot declare field ‘glintFinder::contourFinderBright’ to be of abstract type ‘ofxCvContourFinder’
+  ofxCvContourFinder  contourFinderBright;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintFinder.h:26:23: error: cannot declare field ‘glintFinder::eyeImage’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  eyeImage;
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/GlintFinder/glintFinder.h:48:25: error: cannot declare field ‘glintFinder::checkBrightEye’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced checkBrightEye;    // TODO: FORCHEck!!
+                         ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:12:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/homographyCalcurator.h:18:26: error: cannot declare field ‘homographyCalcurator::warpedImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced  warpedImg;
+                          ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:14:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/thresholdCalculator.h:28:23: error: cannot declare field ‘thresholdCalculator::notDiffImg’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  notDiffImg;
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:27:27: error: cannot declare field ‘eyeTracker::currentImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced   currentImg;
+                           ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:28:25: error: cannot declare field ‘eyeTracker::brightEyeImg’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage    brightEyeImg;
+                         ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:29:25: error: cannot declare field ‘eyeTracker::darkEyeImg’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage    darkEyeImg;
+                         ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:30:27: error: cannot declare field ‘eyeTracker::magCurrentImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced   magCurrentImg;
+                           ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:31:27: error: cannot declare field ‘eyeTracker::smallCurrentImg’ to be of abstract type ‘ofxCvGrayscaleAdvanced’
+  ofxCvGrayscaleAdvanced   smallCurrentImg;
+                           ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiCallback.h:12:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiBaseObject.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:4,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiCallbackValue.h: In member function ‘float guiCallbackData::getFloat(int)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiCallbackValue.h:38:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( which < fVal.size() ){
+              ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiCallbackValue.h: In member function ‘std::string guiCallbackData::getString(int)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiCallbackValue.h:54:14: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if( which < sVal.size() ){
+              ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:25:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h: In member function ‘virtual void guiTypeVairableLister::updateBoundingBox()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:46:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i = 0; i < vars.size(); i++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h: In member function ‘virtual void guiTypeVairableLister::render()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:88:64: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+      ofRect(hitArea.x, hitArea.y, hitArea.width, hitArea.height);
+                                                                ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:97:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < vars.size(); i++){
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:99:13: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       if( i != vars.size()-1){
+             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:101:43: warning: ‘void ofLine(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:486): Use ofDrawLine instead [-Wdeprecated-declarations]
+        ofLine(x, ly, x + hitArea.width, ly);
+                                           ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeVairableLister.h:115:64: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+      ofRect(hitArea.x, hitArea.y, hitArea.width, hitArea.height);
+                                                                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:26:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h: In member function ‘virtual void guiTypeChartPlotter::update()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h:92:29: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if( valueHistory.size() > maxNum ){
+                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h: In member function ‘virtual void guiTypeChartPlotter::render()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h:112:64: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+      ofRect(hitArea.x, hitArea.y, hitArea.width, hitArea.height);
+                                                                ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h:122:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       for(int i = 0; i < valueHistory.size(); i++){
+                        ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeChartPlotter.h:163:64: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+      ofRect(hitArea.x, hitArea.y, hitArea.width, hitArea.height);
+                                                                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiTypeFileLister.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:28,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/simpleFileLister.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/simpleFileLister.h:12:44: error: expected class-name before ‘{’ token
+ class simpleFileLister : public ofFileUtils{
+                                            ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:5:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/baseVideoGrabber.h:13:23: error: cannot declare field ‘baseVideoGrabber::grayImg’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  grayImg;
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:6:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h: In member function ‘virtual void threadedQtVideoGrabber::threadedFunction()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:12:9: error: ‘threadRunning’ was not declared in this scope
+   while(threadRunning) {
+         ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h: In member function ‘void threadedQtVideoGrabber::startCapture(bool)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:34:28: warning: ‘void ofThread::startThread(bool, bool)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/utils/ofThread.h:102): Use startThread(bool blocking = true) instead. [-Wdeprecated-declarations]
+   startThread(true, verbose);
+                            ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h: In member function ‘void threadedQtVideoGrabber::getThreadedPixels(ofxCvColorImage&, bool&)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:48:45: error: ‘width’ was not declared in this scope
+   colorImg.setFromPixels(this->getPixels(), width, height);
+                                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:48:52: error: ‘height’ was not declared in this scope
+   colorImg.setFromPixels(this->getPixels(), width, height);
+                                                    ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:59:20: error: cannot declare field ‘qtVideoGrabber::colorImg’ to be of abstract type ‘ofxCvColorImage’
+  ofxCvColorImage   colorImg;
+                    ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxOpenCv.h:13:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/eyeTracker.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/addons/ofxOpenCv/src/ofxCvColorImage.h:17:7: note:   because the following virtual functions are pure within ‘ofxCvColorImage’:
+ class ofxCvColorImage : public ofxCvImage {
+       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/ofMain.h:19:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:1:
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:156:22: note: 	virtual ofTexture& ofBaseHasTexture::getTexture()
+  virtual ofTexture & getTexture()=0;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:159:28: note: 	virtual const ofTexture& ofBaseHasTexture::getTexture() const
+  virtual const ofTexture & getTexture() const=0;
+                            ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:166:15: note: 	virtual bool ofBaseHasTexture::isUsingTexture() const
+  virtual bool isUsingTexture() const=0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:227:31: note: 	const ofPixels_<PixelType>& ofBaseHasPixels_<T>::getPixels() const [with T = unsigned char]
+  virtual const ofPixels_<T> & getPixels() const=0;
+                               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:77:15: note: 	virtual void ofBaseDraws::draw(float, float, float, float) const
+  virtual void draw(float x, float y, float w, float h) const = 0;
+               ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:106:16: note: 	virtual float ofBaseDraws::getHeight() const
+  virtual float getHeight() const = 0;
+                ^
+/home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/types/ofBaseTypes.h:110:16: note: 	virtual float ofBaseDraws::getWidth() const
+  virtual float getWidth() const = 0;
+                ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h: In member function ‘void qtVideoGrabber::setup(int, int, bool)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:13:22: error: ‘class threadedQtVideoGrabber’ has no member named ‘width’
+   width = vidGrabber.width;
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:14:23: error: ‘class threadedQtVideoGrabber’ has no member named ‘height’
+   height = vidGrabber.height;
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:8:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedImgSaver.h: In member function ‘void threadedImageSaver::start()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedImgSaver.h:24:36: warning: ‘void ofThread::startThread(bool, bool)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/utils/ofThread.h:102): Use startThread(bool blocking = true) instead. [-Wdeprecated-declarations]
+             startThread(true, false);   // blocking, verbose
+                                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedImgSaver.h: In member function ‘virtual void threadedImageSaver::threadedFunction()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedImgSaver.h:39:23: warning: ‘void ofImage_<T>::saveImage(std::string, ofImageQualityType) [with PixelType = unsigned char; std::string = std::basic_string<char>]’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofImage.h:565): Use save instead [-Wdeprecated-declarations]
+    temp.saveImage(name);
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:47:20: error: cannot declare field ‘inputManager::colorImg’ to be of abstract type ‘ofxCvColorImage’
+  ofxCvColorImage   colorImg;
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:49:23: error: cannot declare field ‘inputManager::grayOddImage’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  grayOddImage;
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:50:23: error: cannot declare field ‘inputManager::grayEvenImage’ to be of abstract type ‘ofxCvGrayscaleImage’
+  ofxCvGrayscaleImage  grayEvenImage;
+                       ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:9:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h: In member function ‘virtual void buttonTrigger::draw(float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h:135:29: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+   ofRect(x, y, width, height); 
+                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h:139:29: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+   ofRect(x, y, width, height); 
+                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h: In member function ‘void buttonTrigger::draw(std::string)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h:179:29: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+   ofRect(x, y, width, height); 
+                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonTrigger.h:191:30: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+    ofRect(x, y, width, height); 
+                              ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/otherScenes/typingScene.h:13:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:10,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h: In member function ‘void buttonStateManager::update(float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h:50:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i = 0; i < ptHistory.size(); i++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h: In member function ‘bool buttonStateManager::isPointStationary(float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h:69:26: error: conversion from ‘float’ to non-scalar type ‘ofVec2f’ requested
+     ofVec2f averagePos = 0.0f;
+                          ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h:76:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < ptHistory.size(); i++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonStateManager.h:82:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < ptHistory.size(); i++){
+                      ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/otherScenes/typingScene.h:17:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:10,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonToggle.h: In member function ‘virtual void buttonToggle::draw(float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonToggle.h:96:29: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+   ofRect(x, y, width, height); 
+                             ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gui/buttonToggle.h:100:29: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+   ofRect(x, y, width, height); 
+                             ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:10:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/drawingScene.h:13,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h: In member function ‘void stroke::updateBoundingRect()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h:56:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i = 0; i < pts.size(); i++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h: In member function ‘void stroke::draw(bool)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h:86:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       for(int i = 0; i < pts.size(); i++){
+                        ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h:94:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       for(int i = 0; i < pts.size(); i++){
+                        ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/stroke.h:104:44: warning: ‘void ofCircle(float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:478): Use ofDrawCircle instead [-Wdeprecated-declarations]
+      ofCircle(pts.back().x, pts.back().y, 4);
+                                            ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/drawingScene.h:13:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘void strokeGroup::scale(float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:43:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < strokes.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:45:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < strokes[k].pts.size(); i++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘float strokeGroup::rotate(float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:68:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < strokes.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:69:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < strokes[k].pts.size(); i++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:79:3: warning: no return statement in function returning non-void [-Wreturn-type]
+   }
+   ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘void strokeGroup::shift(float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:83:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < strokes.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:84:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < strokes[k].pts.size(); i++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘int strokeGroup::getTotalNumPoints()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:158:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < strokes.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘void strokeGroup::updateBoundingRect()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:173:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i = 0; i < strokes.size(); i++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘void strokeGroup::drawBoundingRect()’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:217:52: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+     ofRect( rect.x, rect.y, rect.width, rect.height);
+                                                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h: In member function ‘void strokeGroup::draw(bool)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeGroup.h:222:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int i = 0; i < strokes.size(); i++){
+                     ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/drawingScene.h:20:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeThumbnails.h: In member function ‘void strokeThumbnails::drawThumbnails(ofRectangle, float, std::vector<strokeGroup>)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeThumbnails.h:27:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < thumbs.size()-1; i++){
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeThumbnails.h:39:90: warning: ‘void ofRect(float, float, float, float)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/graphics/ofGraphics.h:490): Use ofDrawRectangle instead [-Wdeprecated-declarations]
+ awableRect.x + currentX - scaleW, drawableRect.y, scaleW, drawableRect.height);
+                                                                              ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeThumbnails.h:45:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int j = 0; j < thumbs[k].strokes.size(); j++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeThumbnails.h:50:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int p = 0; p< thumbs[k].strokes[j].pts.size(); p++){
+                      ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/manipulationScene.h:21:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:8,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h: In static member function ‘static ofRectangle strokeUtils::getBoundingRectFromGroups(std::vector<strokeGroup>&)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:25:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < strokeGroups.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h: In static member function ‘static void strokeUtils::scaleGroups(std::vector<strokeGroup>&, float, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:65:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int j = 0; j < strokeGroups.size(); j++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:69:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int k = 0; k < group.strokes.size(); k++){
+                      ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:71:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      for(int i = 0; i < group.strokes[k].pts.size(); i++){
+                       ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h: In static member function ‘static void strokeUtils::autoPlaceAndScaleByWidth(std::vector<strokeGroup>&, ofRectangle)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:99:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int i = 0; i < strokeGroups.size(); i++){
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:129:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int k = 0; k < strokeGroups.size(); k++){
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h: In static member function ‘static void strokeUtils::rotateGroups(std::vector<strokeGroup>&, float)’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:143:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   for(int j = 0; j < strokeGroups.size(); j++){
+                    ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:147:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(int k = 0; k < group.strokes.size(); k++){
+                     ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/strokes/strokeUtils.h:148:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     for(int i = 0; i < group.strokes[k].pts.size(); i++){
+                      ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:10:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/saverScene.h: At global scope:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/saverScene.h:82:3: error: ‘ofFileUtils’ does not name a type
+   ofFileUtils dirList;
+   ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:0:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:65:34: error: ‘constexpr’ needed for in-class initialization of static data member ‘const float testApp::rotSmooth’ of non-integral type [-fpermissive]
+   static const float rotSmooth = .9;
+                                  ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:6:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/inputManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h: In instantiation of ‘void threadedQtVideoGrabber::setup(int, int, L*, bool, bool) [with L = qtVideoGrabber]’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:12:41:   required from here
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:30:40: warning: ‘bool ofVideoGrabber::initGrabber(int, int, bool)’ is deprecated (declared at /home/grace1/of_v0.9.3_linux_release/libs/openFrameworks/video/ofVideoGrabber.h:59): Use setup instead [-Wdeprecated-declarations]
+   initGrabber(width, height, useTexture);
+                                        ^
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h: In instantiation of ‘void threadedQtVideoGrabber::addListener(L*) [with L = qtVideoGrabber]’:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:31:3:   required from ‘void threadedQtVideoGrabber::setup(int, int, L*, bool, bool) [with L = qtVideoGrabber]’
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/qtVideoGrabber.h:12:41:   required from here
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/InputManager/threadedGrabber/threadedQtVideoGrabber.h:44:42: error: invalid use of non-static member function ‘void qtVideoGrabber::frameReceived(ofVideoGrabber&)’
+   ofAddListener(frameReceived, listener, &(L::frameReceived));
+                                          ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiIncludes.h:4:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/ofxControlPanel.h:5,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/Tracking/trackingManager.h:6,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:7,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/utils/ofxControlPanel/guiBaseObject.h:20:13: warning: ‘bool isInsideRect(float, float, ofRectangle)’ defined but not used [-Wunused-function]
+ static bool isInsideRect(float x, float y, ofRectangle rect){
+             ^
+In file included from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/gml/grafIO.h:7:0,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/scenes/manipulationScene.h:23,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/eyePlotterTestApp.h:8,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/testApp.h:21,
+                 from /home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/main.cpp:2:
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker/src/eyePlotterTestApp/appUtils.h:14:15: warning: ‘std::string getTimeAsStr()’ defined but not used [-Wunused-function]
+ static string getTimeAsStr(){
+               ^
+make[1]: *** [obj/linux/Release/src/main.o] Error 1
+make[1]: Leaving directory `/home/grace1/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker'
+make: *** [Release] Error 2
+grace1@grace1-ThinkPad-R52:~/of_v0.9.3_linux_release/apps/eyewriter/eyeWriterTracker$ 

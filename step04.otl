@@ -1,0 +1,551 @@
+:Step04
+
+:: Jun 3
+
+Installing OF on ubuntu consists of downloading the framework and running a dependency install script and then compiling the framework.  See openframeworks_install_dump.txt
+
+:: Jun 3, 2016 (step 8+)
+
+Tried plugging in the PS3 eye camera into my ubuntu 14.04 distro and it just worked.  Apparently there has been some issue getting the mic's to work but since this project has you snip off all the mics--not a problem!  This is great because I had already started soldering to it--both the ground wire and the vertical sync wire.  I used "cheese" as a photo booth to take my picture and get the camera's view of my garage. Apparently there has been some issue getting the mic's to work on ubuntu but since this project has you snip off all the mics--not a problem! 
+
+:: Jun 4, 2016
+
+::: Installing QT
+
+Download 32-bit (for my platform) web installer. Make it executable and run it.  Follow the wizard (take defaults). See eyewriterIDE_dump.txt
+
+::: Setup the IDE project
+
+First problem, the xcode project file supplied by the EyeWriter team isn't recognized by Qt.  This is the problem with IDE's--they hide how stuff is actually put together.  Its a nice convenience when working on code but the final packaging can be pretty heavy handed and obtuse if the IDE is a requirement for building. I am now looking into having Qt setup the open frameworks directory as a project, but am not sure if that's what I really want. Also, thinking I can look for a Makefile or grep through the directory for clues on how to build the eyewriter project.
+
+RemoteEyeTracker.workspace
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="RemoteEyeTracker.cbp" active="1">
+			<Depends filename="..\..\..\libs\openFrameworksCompiled\project\win_cb\openFrameworksLib.cbp" />
+		</Project>
+		<Project filename="..\..\..\libs\openFrameworksCompiled\project\win_cb\openFrameworksLib.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
+```
+
+The real meat of the project seems to be in RemoteEyeTracker.cbp
+
+Importing a project as platform independent crashes Qt on Ubuntu
+
+https://bugreports.qt.io/browse/QTCREATORBUG-13867
+
+It seems there may be some limited support for code blocks projects but I don't see anything inside Qt that suggests it will work with that.  I'll try to re-install and see if there is an opotion I missed.
+
+Creating a project crashes in open framework.  Forum searching suggests that the regex error is fixed with g++ 4.9.  To get g++ 4.9
+
+http://askubuntu.com/questions/428198/getting-installing-gcc-g-4-9-on-ubuntu
+
+```
+apt-get install build-essential
+add-apt-repository ppa:ubuntu-toolchain-r/test
+apt-get update
+apt-get install gcc-4.9 g++-4.9 cpp-4.9
+
+cd /usr/bin
+rm gcc g++ cpp
+ln -s gcc-4.9 gcc
+ln -s g++-4.9 g++
+ln -s cpp-4.9 cpp
+
+Re-run OF install-dependencies.sh
+Re-run compileOF.sh
+Re-run compilePG.sh
+```
+
+setup new qt project
+```
+[notice ] -----------------------------------------------
+[notice ] setting OF path to: /home/grace1/of_v0.9.3_linux_release
+[notice ] from -o option
+[notice ] target platform is: linux
+[notice ] updating project /home/grace1/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker
+[notice ] saving addons.make
+[notice ] project updated! 
+[notice ] -----------------------------------------------
+
+
+1 project updated [notice ] in -6237.15 seconds
+
+
+
+
+
+(command used: "projectGenerator"  -o"/home/grace1/of_v0.9.3_linux_release" -a" " -p"linux" "/home/grace1/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker")
+
+```
+
+New file /home/grace1/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker/eyeWriterTracker.qbs
+
+:::: terminal dump
+Hit http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages       
+Hit http://us.archive.ubuntu.com trusty-updates/universe i386 Packages         
+Hit http://extras.ubuntu.com trusty/main Sources                               
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages       
+Hit http://archive.canonical.com precise/partner Sources                       
+Hit http://us.archive.ubuntu.com trusty-updates/main Translation-en            
+Get:2 http://security.ubuntu.com trusty-security/main Sources [117 kB]         
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en      
+Hit http://extras.ubuntu.com trusty/main i386 Packages                         
+Hit http://archive.canonical.com precise/partner i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/universe Translation-en        
+Hit http://us.archive.ubuntu.com trusty-backports/main Sources                 
+Hit http://archive.canonical.com precise/partner Translation-en                
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/universe Sources             
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Sources           
+Hit http://us.archive.ubuntu.com trusty-backports/main i386 Packages           
+Get:3 http://security.ubuntu.com trusty-security/restricted Sources [4,035 B]  
+Hit http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/universe i386 Packages       
+Get:4 http://security.ubuntu.com trusty-security/universe Sources [37.3 kB]    
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages     
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en          
+Get:5 http://security.ubuntu.com trusty-security/multiverse Sources [2,760 B]  
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en    
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en    
+Get:6 http://security.ubuntu.com trusty-security/main i386 Packages [458 kB]   
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en      
+Hit http://us.archive.ubuntu.com trusty/main Sources                           
+Hit http://us.archive.ubuntu.com trusty/restricted Sources                     
+Hit http://us.archive.ubuntu.com trusty/universe Sources                       
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources                     
+Ign http://extras.ubuntu.com trusty/main Translation-en_US                     
+Get:7 http://security.ubuntu.com trusty-security/restricted i386 Packages [12.7 kB]
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages                     
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages               
+Ign http://extras.ubuntu.com trusty/main Translation-en                        
+Get:8 http://security.ubuntu.com trusty-security/universe i386 Packages [130 kB]
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages               
+Get:9 http://security.ubuntu.com trusty-security/multiverse i386 Packages [5,168 B]
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                    
+Hit http://security.ubuntu.com trusty-security/main Translation-en             
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en              
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en              
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en                
+Hit http://security.ubuntu.com trusty-security/universe Translation-en         
+Ign http://us.archive.ubuntu.com trusty/main Translation-en_US                 
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US
+Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US
+Fetched 832 kB in 19s (42.2 kB/s)                                              
+Reading package lists... Done
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get remove g++
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages will be REMOVED:
+  build-essential g++
+0 upgraded, 0 newly installed, 2 to remove and 8 not upgraded.
+After this operation, 72.7 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 327089 files and directories currently installed.)
+Removing build-essential (11.6ubuntu6) ...
+Removing g++ (4:4.8.2-1ubuntu6) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+grace1@grace1-ThinkPad-R52:~$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.8/lto-wrapper
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.8.4-2ubuntu1~14.04.3' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-libmudflap --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-i386 --with-arch-directory=i386 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-targets=all --enable-multiarch --disable-werror --with-arch-32=i686 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get -h
+apt 1.0.1ubuntu2 for i386 compiled on May 18 2016 09:49:02
+Usage: apt-get [options] command
+       apt-get [options] install|remove pkg1 [pkg2 ...]
+       apt-get [options] source pkg1 [pkg2 ...]
+
+apt-get is a simple command line interface for downloading and
+installing packages. The most frequently used commands are update
+and install.
+
+Commands:
+   update - Retrieve new lists of packages
+   upgrade - Perform an upgrade
+   install - Install new packages (pkg is libc6 not libc6.deb)
+   remove - Remove packages
+   autoremove - Remove automatically all unused packages
+   purge - Remove packages and config files
+   source - Download source archives
+   build-dep - Configure build-dependencies for source packages
+   dist-upgrade - Distribution upgrade, see apt-get(8)
+   dselect-upgrade - Follow dselect selections
+   clean - Erase downloaded archive files
+   autoclean - Erase old downloaded archive files
+   check - Verify that there are no broken dependencies
+   changelog - Download and display the changelog for the given package
+   download - Download the binary package into the current directory
+
+Options:
+  -h  This help text.
+  -q  Loggable output - no progress indicator
+  -qq No output except for errors
+  -d  Download only - do NOT install or unpack archives
+  -s  No-act. Perform ordering simulation
+  -y  Assume Yes to all queries and do not prompt
+  -f  Attempt to correct a system with broken dependencies in place
+  -m  Attempt to continue if archives are unlocatable
+  -u  Show a list of upgraded packages as well
+  -b  Build the source package after fetching it
+  -V  Show verbose version numbers
+  -c=? Read this configuration file
+  -o=? Set an arbitrary configuration option, eg -o dir::cache=/tmp
+See the apt-get(8), sources.list(5) and apt.conf(5) manual
+pages for more information and options.
+                       This APT has Super Cow Powers.
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get remove g++
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+Package 'g++' is not installed, so not removed
+The following package was automatically installed and is no longer required:
+  g++-4.8
+Use 'apt-get autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get autoclean
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+grace1@grace1-ThinkPad-R52:~$ gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.8/lto-wrapper
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.8.4-2ubuntu1~14.04.3' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-libmudflap --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-i386 --with-arch-directory=i386 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-targets=all --enable-multiarch --disable-werror --with-arch-32=i686 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
+grace1@grace1-ThinkPad-R52:~$ g++ -v
+bash: /usr/bin/g++: No such file or directory
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get remove gcc
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  g++-4.8
+Use 'apt-get autoremove' to remove it.
+The following packages will be REMOVED:
+  gcc
+0 upgraded, 0 newly installed, 1 to remove and 8 not upgraded.
+After this operation, 42.0 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 327075 files and directories currently installed.)
+Removing gcc (4:4.8.2-1ubuntu6) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+grace1@grace1-ThinkPad-R52:~$ gcc -v
+bash: /usr/bin/gcc: No such file or directory
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get install g++-4.9
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+g++-4.9 is already the newest version.
+The following package was automatically installed and is no longer required:
+  g++-4.8
+Use 'apt-get autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+grace1@grace1-ThinkPad-R52:~$ g++ -v
+bash: /usr/bin/g++: No such file or directory
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get remove g++-4.9
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  g++-4.8
+Use 'apt-get autoremove' to remove it.
+The following packages will be REMOVED:
+  g++-4.9
+0 upgraded, 0 newly installed, 1 to remove and 8 not upgraded.
+After this operation, 34.2 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 327055 files and directories currently installed.)
+Removing g++-4.9 (4.9.3-8ubuntu2~14.04) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get install g++
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  gcc
+Suggested packages:
+  g++-multilib gcc-multilib autoconf automake1.9 libtool flex bison gcc-doc
+The following NEW packages will be installed:
+  g++ gcc
+0 upgraded, 2 newly installed, 0 to remove and 8 not upgraded.
+Need to get 6,596 B of archives.
+After this operation, 76.8 kB of additional disk space will be used.
+Do you want to continue? [Y/n] n
+Abort.
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get install g++ -V
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+   gcc (4.8.2-1ubuntu6)
+Suggested packages:
+   g++-multilib (4.8.2-1ubuntu6)
+   gcc-multilib (4.8.2-1ubuntu6)
+   autoconf (2.69-6)
+   automake1.9 (1.9.6+nogfdl-4ubuntu1)
+   libtool (2.4.2-1.7ubuntu1)
+   flex (2.5.35-10.1ubuntu2)
+   bison (3.0.2.dfsg-2)
+   gcc-doc (4.8.2-1ubuntu6)
+The following NEW packages will be installed:
+   g++ (4.8.2-1ubuntu6)
+   gcc (4.8.2-1ubuntu6)
+0 upgraded, 2 newly installed, 0 to remove and 8 not upgraded.
+Need to get 6,596 B of archives.
+After this operation, 76.8 kB of additional disk space will be used.
+Do you want to continue? [Y/n] n
+Abort.
+grace1@grace1-ThinkPad-R52:~$ sudo apt-get install g++-4.9
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  g++-4.8
+Use 'apt-get autoremove' to remove it.
+Suggested packages:
+  g++-4.9-multilib gcc-4.9-doc libstdc++6-4.9-dbg
+The following NEW packages will be installed:
+  g++-4.9
+0 upgraded, 1 newly installed, 0 to remove and 8 not upgraded.
+Need to get 0 B/21.5 MB of archives.
+After this operation, 34.2 MB of additional disk space will be used.
+Selecting previously unselected package g++-4.9.
+(Reading database ... 327018 files and directories currently installed.)
+Preparing to unpack .../g++-4.9_4.9.3-8ubuntu2~14.04_i386.deb ...
+Unpacking g++-4.9 (4.9.3-8ubuntu2~14.04) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up g++-4.9 (4.9.3-8ubuntu2~14.04) ...
+grace1@grace1-ThinkPad-R52:~$ g++ -v
+bash: /usr/bin/g++: No such file or directory
+grace1@grace1-ThinkPad-R52:~$ sudo su -
+root@grace1-ThinkPad-R52:~# apt-get install build-essential
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  g++ gcc
+Suggested packages:
+  g++-multilib gcc-multilib autoconf automake1.9 libtool flex bison gcc-doc
+The following NEW packages will be installed:
+  build-essential g++ gcc
+0 upgraded, 3 newly installed, 0 to remove and 8 not upgraded.
+Need to get 11.4 kB of archives.
+After this operation, 115 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Abort.
+root@grace1-ThinkPad-R52:~# sudo su -
+root@grace1-ThinkPad-R52:~# apt-get install build-essential
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  g++ gcc
+Suggested packages:
+  g++-multilib gcc-multilib autoconf automake1.9 libtool flex bison gcc-doc
+The following NEW packages will be installed:
+  build-essential g++ gcc
+0 upgraded, 3 newly installed, 0 to remove and 8 not upgraded.
+Need to get 11.4 kB of archives.
+After this operation, 115 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Abort.
+root@grace1-ThinkPad-R52:~# sudo su -
+root@grace1-ThinkPad-R52:~# apt-get install build-essential
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  g++ gcc
+Suggested packages:
+  g++-multilib gcc-multilib autoconf automake1.9 libtool flex bison gcc-doc
+The following NEW packages will be installed:
+  build-essential g++ gcc
+0 upgraded, 3 newly installed, 0 to remove and 8 not upgraded.
+Need to get 11.4 kB of archives.
+After this operation, 115 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Abort.
+root@grace1-ThinkPad-R52:~# sudo apt-get install build-essential
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following extra packages will be installed:
+  g++ gcc
+Suggested packages:
+  g++-multilib gcc-multilib autoconf automake1.9 libtool flex bison gcc-doc
+The following NEW packages will be installed:
+  build-essential g++ gcc
+0 upgraded, 3 newly installed, 0 to remove and 8 not upgraded.
+Need to get 11.4 kB of archives.
+After this operation, 115 kB of additional disk space will be used.
+Do you want to continue? [Y/n] Y
+Get:1 http://us.archive.ubuntu.com/ubuntu/ trusty/main gcc i386 4:4.8.2-1ubuntu6 [5,096 B]
+Get:2 http://us.archive.ubuntu.com/ubuntu/ trusty/main g++ i386 4:4.8.2-1ubuntu6 [1,500 B]
+Get:3 http://us.archive.ubuntu.com/ubuntu/ trusty/main build-essential i386 11.6ubuntu6 [4,824 B]
+Fetched 11.4 kB in 0s (29.8 kB/s)          
+Selecting previously unselected package gcc.
+(Reading database ... 327056 files and directories currently installed.)
+Preparing to unpack .../gcc_4%3a4.8.2-1ubuntu6_i386.deb ...
+Unpacking gcc (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../g++_4%3a4.8.2-1ubuntu6_i386.deb ...
+Unpacking g++ (4:4.8.2-1ubuntu6) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../build-essential_11.6ubuntu6_i386.deb ...
+Unpacking build-essential (11.6ubuntu6) ...
+Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
+Setting up gcc (4:4.8.2-1ubuntu6) ...
+Setting up g++ (4:4.8.2-1ubuntu6) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (11.6ubuntu6) ...
+root@grace1-ThinkPad-R52:~# sudo apt-get install update
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package update
+root@grace1-ThinkPad-R52:~# sudo apt-get update
+Ign http://us.archive.ubuntu.com trusty InRelease
+Get:1 http://us.archive.ubuntu.com trusty-updates InRelease [65.9 kB]          
+Hit http://ppa.launchpad.net trusty InRelease                                  
+Hit http://security.ubuntu.com trusty-security InRelease                       
+Ign http://archive.canonical.com precise InRelease                             
+Ign http://extras.ubuntu.com trusty InRelease                                  
+Get:2 http://us.archive.ubuntu.com trusty-backports InRelease [65.9 kB]        
+Hit http://archive.canonical.com precise Release.gpg                           
+Hit http://extras.ubuntu.com trusty Release.gpg                                
+Hit http://us.archive.ubuntu.com trusty Release.gpg                            
+Hit http://us.archive.ubuntu.com trusty Release                          
+Hit http://archive.canonical.com precise Release                         
+Hit http://extras.ubuntu.com trusty Release                              
+Hit http://ppa.launchpad.net trusty/main i386 Packages                         
+Get:3 http://us.archive.ubuntu.com trusty-updates/main Sources [276 kB]        
+Hit http://security.ubuntu.com trusty-security/main Sources            
+Hit http://security.ubuntu.com trusty-security/restricted Sources              
+Hit http://ppa.launchpad.net trusty/main Translation-en                        
+Get:4 http://us.archive.ubuntu.com trusty-updates/restricted Sources [5,352 B] 
+Get:5 http://us.archive.ubuntu.com trusty-updates/universe Sources [156 kB]    
+Hit http://security.ubuntu.com trusty-security/universe Sources                
+Hit http://archive.canonical.com precise/partner Sources                       
+Hit http://extras.ubuntu.com trusty/main Sources                               
+Get:6 http://us.archive.ubuntu.com trusty-updates/multiverse Sources [5,939 B] 
+Get:7 http://us.archive.ubuntu.com trusty-updates/main i386 Packages [740 kB]  
+Hit http://archive.canonical.com precise/partner i386 Packages                 
+Hit http://security.ubuntu.com trusty-security/multiverse Sources              
+Hit http://extras.ubuntu.com trusty/main i386 Packages                         
+Hit http://archive.canonical.com precise/partner Translation-en                
+Hit http://security.ubuntu.com trusty-security/main i386 Packages              
+Get:8 http://us.archive.ubuntu.com trusty-updates/restricted i386 Packages [15.6 kB]
+Hit http://security.ubuntu.com trusty-security/restricted i386 Packages        
+Get:9 http://us.archive.ubuntu.com trusty-updates/universe i386 Packages [363 kB]
+Hit http://security.ubuntu.com trusty-security/universe i386 Packages          
+Get:10 http://us.archive.ubuntu.com trusty-updates/multiverse i386 Packages [13.6 kB]
+Hit http://us.archive.ubuntu.com trusty-updates/main Translation-en            
+Hit http://security.ubuntu.com trusty-security/multiverse i386 Packages        
+Hit http://us.archive.ubuntu.com trusty-updates/multiverse Translation-en      
+Hit http://us.archive.ubuntu.com trusty-updates/restricted Translation-en      
+Hit http://security.ubuntu.com trusty-security/main Translation-en             
+Hit http://us.archive.ubuntu.com trusty-updates/universe Translation-en        
+Get:11 http://us.archive.ubuntu.com trusty-backports/main Sources [9,553 B]    
+Hit http://security.ubuntu.com trusty-security/multiverse Translation-en       
+Get:12 http://us.archive.ubuntu.com trusty-backports/restricted Sources [28 B] 
+Hit http://security.ubuntu.com trusty-security/restricted Translation-en       
+Get:13 http://us.archive.ubuntu.com trusty-backports/universe Sources [35.2 kB]
+Get:14 http://us.archive.ubuntu.com trusty-backports/multiverse Sources [1,898 B]
+Hit http://security.ubuntu.com trusty-security/universe Translation-en         
+Get:15 http://us.archive.ubuntu.com trusty-backports/main i386 Packages [13.1 kB]
+Get:16 http://us.archive.ubuntu.com trusty-backports/restricted i386 Packages [28 B]
+Ign http://extras.ubuntu.com trusty/main Translation-en_US                     
+Get:17 http://us.archive.ubuntu.com trusty-backports/universe i386 Packages [43.2 kB]
+Ign http://extras.ubuntu.com trusty/main Translation-en                        
+Get:18 http://us.archive.ubuntu.com trusty-backports/multiverse i386 Packages [1,552 B]
+Hit http://us.archive.ubuntu.com trusty-backports/main Translation-en      
+Hit http://us.archive.ubuntu.com trusty-backports/multiverse Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/restricted Translation-en
+Hit http://us.archive.ubuntu.com trusty-backports/universe Translation-en  
+Hit http://us.archive.ubuntu.com trusty/main Sources                       
+Hit http://us.archive.ubuntu.com trusty/restricted Sources                 
+Hit http://us.archive.ubuntu.com trusty/universe Sources                   
+Hit http://us.archive.ubuntu.com trusty/multiverse Sources                 
+Hit http://us.archive.ubuntu.com trusty/main i386 Packages                 
+Hit http://us.archive.ubuntu.com trusty/restricted i386 Packages           
+Hit http://us.archive.ubuntu.com trusty/universe i386 Packages             
+Hit http://us.archive.ubuntu.com trusty/multiverse i386 Packages           
+Hit http://us.archive.ubuntu.com trusty/main Translation-en                
+Hit http://us.archive.ubuntu.com trusty/multiverse Translation-en          
+Hit http://us.archive.ubuntu.com trusty/restricted Translation-en          
+Hit http://us.archive.ubuntu.com trusty/universe Translation-en            
+Ign http://us.archive.ubuntu.com trusty/main Translation-en_US             
+Ign http://us.archive.ubuntu.com trusty/multiverse Translation-en_US       
+Ign http://us.archive.ubuntu.com trusty/restricted Translation-en_US       
+Ign http://us.archive.ubuntu.com trusty/universe Translation-en_US         
+Fetched 1,812 kB in 16s (107 kB/s)                                             
+Reading package lists... Done
+root@grace1-ThinkPad-R52:~# apt-get install gcc-4.9 g++-4.9 cpp-4.9
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+cpp-4.9 is already the newest version.
+cpp-4.9 set to manually installed.
+g++-4.9 is already the newest version.
+gcc-4.9 is already the newest version.
+gcc-4.9 set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+root@grace1-ThinkPad-R52:~# gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.8/lto-wrapper
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.8.4-2ubuntu1~14.04.3' --with-bugurl=file:///usr/share/doc/gcc-4.8/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.8 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.8 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-libmudflap --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.8-i386 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.8-i386 --with-arch-directory=i386 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-targets=all --enable-multiarch --disable-werror --with-arch-32=i686 --with-multilib-list=m32,m64,mx32 --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.8.4 (Ubuntu 4.8.4-2ubuntu1~14.04.3) 
+root@grace1-ThinkPad-R52:~# cd /usr/bin
+root@grace1-ThinkPad-R52:/usr/bin# rm gcc g++ cpp
+root@grace1-ThinkPad-R52:/usr/bin# ln -s gcc-4.9 gcc
+root@grace1-ThinkPad-R52:/usr/bin# ln -s g++-4.9 g++
+root@grace1-ThinkPad-R52:/usr/bin# ln -s cpp-4.9 cpp
+root@grace1-ThinkPad-R52:/usr/bin# gcc -v
+Using built-in specs.
+COLLECT_GCC=gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/i686-linux-gnu/4.9/lto-wrapper
+Target: i686-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 4.9.3-8ubuntu2~14.04' --with-bugurl=file:///usr/share/doc/gcc-4.9/README.Bugs --enable-languages=c,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.9 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.9 --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-4.9-i386/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-4.9-i386 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-4.9-i386 --with-arch-directory=i386 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-targets=all --enable-multiarch --disable-werror --with-arch-32=i686 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=i686-linux-gnu --host=i686-linux-gnu --target=i686-linux-gnu
+Thread model: posix
+gcc version 4.9.3 (Ubuntu 4.9.3-8ubuntu2~14.04) 
+root@grace1-ThinkPad-R52:/usr/bin# 
+
+
+
+
+
+::: Get arduino IDE
+
+::: more with Qt
+
+qt project won't build, trying to figure out how to generate it better.  Apparently I need qtcreator which has some code analysis tools to help generate the project definition.
+
+need to put Qt creator on the path
+
+in ~/.bashrc
+export PATH=$PATH:$HOME/Qt/Tools/QtCreator/bin
+
+:::: Running make
+
+/home/grace1/of_v0.9.3_linux_release/apps/eyewriter-remoteEyetracker/eyeWriterTracker/src/Tracking/eyeTracker.h:7:27: fatal error: ofxVectorMath.h: No such file or directory
+ #include "ofxVectorMath.h"
+
+searching online I see the two requirments for the eye tracker ofxVectorMath (https://forum.openframeworks.cc/t/ofxvectormath/7028) and ofxDirList (http://ofxfenster.undef.ch/doc/ofxDirList_8h_source.html) seem to be deprecated awhile ago.  I'll need to search/replace figure out the code to fix.

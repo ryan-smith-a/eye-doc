@@ -1,0 +1,24 @@
+:Step06
+:: May 17, 2016
+
+Tried using the
+
+
+:: May 18, 2016
+
+Figured out the forware voltage and power requirements of the LEDs today.  I think if I change the configuration to 3 banks of 3 LEDs I can use a 5v power supply.  From what I can tell looking at the instructions the only thing requiring the 7.5 volts is the four LEDs in series.  Then we step down the voltage with the power regulator to 5v (could be wrong I guess I will find out as I go).  The benefit of choosing the 5v is that it is a very ubiquitous voltage and power supplies are everywhere.  It should be easier to bump into a supply of the right wattage.  I, for instance, have an old powered USB hub with a 11W power supply that will do nicely I think.  
+
+Here is one example that could work
+http://www.digikey.com/product-detail/en/cui-inc/SWI12-5-N-P5R/102-3425-ND/5287234
+
+This is what I had on hand
+
+This is what was originally recommended
+
+:: May 19, 2016
+
+Tested my 5V 2.1A power supply with my multi-meter and it showed 5.33V and 0.45A.  Looks like I'll be hunting another supply soonish.  This one will get me started and it seemed to work with my bread board mockup.  The LEDs will be in an array 3x3 instead of 4x2 and the same two 1w 3ohm resisters in series is still perfect. I need to read the instructions a bit more thoroughly to make sure there isn't some other part that needs 7.5V for some reason before I solder this down.
+
+
+
+
